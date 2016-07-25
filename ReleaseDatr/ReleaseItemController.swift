@@ -59,6 +59,13 @@ class ReleaseItemController {
 		return dateFormatter.dateFromString( date )
 	}
 
+	func formatDateToDisplayString( date: NSDate ) -> String? {
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+
+		return dateFormatter.stringFromDate( date )
+	}
+
 	func jsonToDictionary( json: NSData ) {
 		do {
 			let releaseItemDictionaries = try NSJSONSerialization.JSONObjectWithData( json, options: [] ) as? [ [ String:AnyObject ] ]

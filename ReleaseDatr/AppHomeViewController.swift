@@ -24,11 +24,11 @@ class AppHomeViewController: UIViewController {
         
         var description: String {
             switch self {
-            case .Book: return "Book"
-            case .Movie: return "Movie"
-            case .TV: return "TV"
-            case .Game: return "Game"
-            case .Music: return "Music"
+                case .Book: return "Book"
+                case .Movie: return "Movie"
+                case .TV: return "TV"
+                case .Game: return "Game"
+                case .Music: return "Music"
             }
         }
     }

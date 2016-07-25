@@ -50,21 +50,25 @@ class ReleaseItemTableViewController: UITableViewController {
 	}
 
 	override func tableView( tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath ) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier( "releaseItem", forIndexPath: indexPath )
+		let cell = tableView.dequeueReusableCellWithIdentifier( "releaseItem", forIndexPath: indexPath ) as! ReleaseItemTableViewCell
 
-		// Configure the cell...
+		cell.releaseItemNameLabel.text = releaseItems[ indexPath.row ].name
+		cell.releaseItemDateLabel.text = releaseItemCtrl.formatDateToDisplayString( releaseItems[ indexPath.row ].releaseDate )
+		cell.releaseItemConfirmedImage.hidden = !releaseItems[ indexPath.row ].releaseDateConfirmed
 
 		return cell
 	}
 
-	/*
 	// MARK: - Navigation
 
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		// Get the new view controller using segue.destinationViewController.
-		// Pass the selected object to the new view controller.
+		if segue.identifier == "showReleaseItemDetail" {
+			if let destination = segue.destinationViewController as? ReleaseItemDetailViewController,
+			indexPath = self.tableView.indexPathForSelectedRow,
+			releaseItem = releaseItemCtrl.releaseItemsByType[ mediaType ] {
+				destination.releaseItem = releaseItem[ indexPath.row ]
+			}
+		}
 	}
-	*/
 
 }
