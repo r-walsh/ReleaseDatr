@@ -19,7 +19,7 @@
 		A01AF27C1D4295B000C92439 /* NewReleaseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AF27B1D4295B000C92439 /* NewReleaseItemViewController.swift */; };
 		A01AF27E1D4295C800C92439 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AF27D1D4295C800C92439 /* NetworkController.swift */; };
 		A01AF2821D42A11300C92439 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AF2811D42A11300C92439 /* ButtonBorder.swift */; };
-		A01AF2861D42AA8B00C92439 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AF2851D42AA8B00C92439 /* HomeViewController.swift */; };
+		A0CE4A1E1D467D09003DA456 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CE4A1D1D467D08003DA456 /* AppHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		A01AF27B1D4295B000C92439 /* NewReleaseItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleaseItemViewController.swift; sourceTree = "<group>"; };
 		A01AF27D1D4295C800C92439 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		A01AF2811D42A11300C92439 /* ButtonBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
-		A01AF2851D42AA8B00C92439 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		A0CE4A1D1D467D08003DA456 /* AppHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,6 @@
 				A01AF2541D42951F00C92439 /* AppDelegate.swift */,
 				A01AF25E1D42951F00C92439 /* Assets.xcassets */,
 				A01AF2811D42A11300C92439 /* ButtonBorder.swift */,
-				A01AF2851D42AA8B00C92439 /* HomeViewController.swift */,
 				A01AF2631D42951F00C92439 /* Info.plist */,
 				A01AF2601D42951F00C92439 /* LaunchScreen.storyboard */,
 				A01AF2581D42951F00C92439 /* Main.storyboard */,
@@ -104,6 +103,7 @@
 				A01AF2771D42953900C92439 /* ReleaseItem.swift */,
 				A01AF2791D42957800C92439 /* ReleaseItemController.swift */,
 				A007230A1D459AED0091ECAC /* ReleaseItemTableViewController.swift */,
+				A0CE4A1D1D467D08003DA456 /* AppHomeViewController.swift */,
 			);
 			path = ReleaseDatr;
 			sourceTree = "<group>";
@@ -221,8 +221,8 @@
 				A01AF27C1D4295B000C92439 /* NewReleaseItemViewController.swift in Sources */,
 				A01AF2781D42953900C92439 /* ReleaseItem.swift in Sources */,
 				A01AF25D1D42951F00C92439 /* ReleaseDatr.xcdatamodeld in Sources */,
-				A01AF2861D42AA8B00C92439 /* HomeViewController.swift in Sources */,
 				A01AF27A1D42957800C92439 /* ReleaseItemController.swift in Sources */,
+				A0CE4A1E1D467D09003DA456 /* AppHomeViewController.swift in Sources */,
 				A01AF27E1D4295C800C92439 /* NetworkController.swift in Sources */,
 				A007230B1D459AED0091ECAC /* ReleaseItemTableViewController.swift in Sources */,
 				A01AF2821D42A11300C92439 /* ButtonBorder.swift in Sources */,

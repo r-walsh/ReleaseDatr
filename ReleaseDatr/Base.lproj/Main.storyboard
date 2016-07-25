@@ -9,7 +9,7 @@
         <!--Home-->
         <scene sceneID="U3c-5M-wkN">
             <objects>
-                <viewController id="V37-KY-vcq" customClass="HomeViewController" customModule="ReleaseDatr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V37-KY-vcq" customClass="AppHomeViewController" customModule="ReleaseDatr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7PH-LO-voK"/>
                         <viewControllerLayoutGuide type="bottom" id="izk-Y5-hVa"/>
@@ -38,7 +38,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="Qhg-Ky-VfY"/>
+                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="gpR-ZB-N3K"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx6-yE-hYZ">
@@ -48,7 +48,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="5ha-Bs-Aaz"/>
+                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="KzG-hH-z2C"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-Tc-Kab">
@@ -58,7 +58,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="NH6-Qa-USw"/>
+                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="5tI-dc-WRS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xp5-yu-dFg">
@@ -68,7 +68,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="gTM-ES-JXq"/>
+                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="KB8-ON-tzU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBj-zO-Sxc">
@@ -78,7 +78,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="BNR-a4-WQc"/>
+                                            <action selector="releaseItemButtonPressed:" destination="V37-KY-vcq" eventType="touchUpInside" id="US4-r5-b2O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -120,12 +120,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="booksButton" destination="VYx-bB-lcf" id="RAR-PO-KIu"/>
-                        <outlet property="gamesButton" destination="xp5-yu-dFg" id="Vy3-hW-3Xu"/>
-                        <outlet property="loadingReleaseItemsIndicator" destination="ou4-nb-TgI" id="Mzh-Ht-RyB"/>
-                        <outlet property="moviesButton" destination="bx6-yE-hYZ" id="fx9-X6-gER"/>
-                        <outlet property="musicButton" destination="CBj-zO-Sxc" id="MXr-wA-RFM"/>
-                        <outlet property="tvButton" destination="pfo-Tc-Kab" id="KMQ-tN-dQ5"/>
+                        <outlet property="booksButton" destination="VYx-bB-lcf" id="ueG-8J-GgI"/>
+                        <outlet property="gamesButton" destination="xp5-yu-dFg" id="Aop-A2-Gna"/>
+                        <outlet property="loadingReleaseItemsIndicator" destination="ou4-nb-TgI" id="U4l-LO-bIO"/>
+                        <outlet property="moviesButton" destination="bx6-yE-hYZ" id="j2d-Gi-CbH"/>
+                        <outlet property="musicButton" destination="CBj-zO-Sxc" id="dEz-gm-kvJ"/>
+                        <outlet property="tvButton" destination="pfo-Tc-Kab" id="iFS-Ic-baN"/>
                         <segue destination="JmS-0q-Cf2" kind="show" identifier="showReleaseItems" id="W4S-IE-sTx"/>
                     </connections>
                 </viewController>
