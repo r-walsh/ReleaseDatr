@@ -56,6 +56,22 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 	// MARK: - Actions
 
 	@IBAction func saveReleaseItemButtonPressed( sender: UIButton ) {
+		let userCtrl = UserController.sharedController
+
+		if userCtrl.user == nil {
+			let alertController = UIAlertController( title: "Login", message: "You must be logged add a release item", preferredStyle: .Alert )
+			let loginAction = UIAlertAction( title: "Login", style: .Default ) {
+				UIAlertAction -> Void in
+				userCtrl.presentLoginView( self )
+			}
+
+			alertController.addAction( loginAction )
+			alertController.addAction( UIAlertAction( title: "Cancel", style: .Destructive, handler: nil ) )
+
+			self.presentViewController( alertController, animated: true, completion: nil )
+			return
+		}
+
 		if let name = releaseItemNameTextField.text, releaseDateSource = sourceUrlTextField.text, mediaType = MediaTypes( rawValue: mediaTypes[ mediaTypePicker.selectedRowInComponent( 0 ) ] ) {
 			let releaseItem = ReleaseItemController.sharedController.createReleaseItem( name, mediaType: mediaType, releaseDate: releaseDate.date, releaseDateSources: [ releaseDateSource ] )
 

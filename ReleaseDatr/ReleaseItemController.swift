@@ -8,9 +8,6 @@
 
 import Foundation
 
-//Users/ryanwalsh/projects/ReleaseDatr/AppHomeViewController.swift
-///Users/ryanwalsh/projects/ReleaseDatr/ReleaseDatr/ButtonBorder.swift
-
 class ReleaseItemController {
 	static let sharedController = ReleaseItemController()
 

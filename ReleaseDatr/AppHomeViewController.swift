@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Lock
+
 
 class AppHomeViewController: UIViewController {
     
@@ -18,7 +20,7 @@ class AppHomeViewController: UIViewController {
     @IBOutlet weak var loadingReleaseItemsIndicator: UIActivityIndicatorView!
     
     let releaseItemCtrl = ReleaseItemController.sharedController
-    
+
     private enum SelectedButtonTag: Int {
         case Book, Movie, TV, Game, Music
         
@@ -35,7 +37,9 @@ class AppHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        UserController.sharedController.presentLoginView( self )
+
         loadingReleaseItemsIndicator.hidden = true
         
         let borderColor = UIColor( red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0 )
@@ -54,12 +58,12 @@ class AppHomeViewController: UIViewController {
     
     func determinePressedButton( tag: Int ) -> String? {
         switch tag {
-        case SelectedButtonTag.Book.rawValue: return "Book"
-        case SelectedButtonTag.Movie.rawValue: return "Movie"
-        case SelectedButtonTag.TV.rawValue: return "TV"
-        case SelectedButtonTag.Game.rawValue: return "Game"
-        case SelectedButtonTag.Music.rawValue: return "Music"
-        default: return nil
+            case SelectedButtonTag.Book.rawValue: return "Book"
+            case SelectedButtonTag.Movie.rawValue: return "Movie"
+            case SelectedButtonTag.TV.rawValue: return "TV"
+            case SelectedButtonTag.Game.rawValue: return "Game"
+            case SelectedButtonTag.Music.rawValue: return "Music"
+            default: return nil
         }
     }
     

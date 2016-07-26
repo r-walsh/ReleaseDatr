@@ -8,13 +8,14 @@
 
 import Foundation
 
-struct ReleaseItem {
+class ReleaseItem {
 
 	private let nameKey = "name"
 	private let mediaTypeKey = "mediaType"
 	private let releaseDateKey = "releaseDate"
 	private let releaseDateConfirmedKey = "releaseDateConfirmed"
 	private let releaseDateSourcesKey = "releaseDateSources"
+	private let _idKey = "_id"
 
 	let name: String
 	let mediaType: String
@@ -22,6 +23,7 @@ struct ReleaseItem {
 	let releaseDateString: String
 	let releaseDateConfirmed: Bool
 	let releaseDateSources: [ String ]
+	let _id: String
 
 	var jsonValue: [ String:AnyObject ] {
 		return [
@@ -29,12 +31,13 @@ struct ReleaseItem {
 				mediaTypeKey: mediaType,
 				releaseDateKey: releaseDateString,
 				releaseDateConfirmedKey: releaseDateConfirmed,
-				releaseDateSourcesKey: releaseDateSources
+				releaseDateSourcesKey: releaseDateSources,
+				_idKey: _id
 		]
 	}
 
 	var jsonData: NSData? {
-		return try? NSJSONSerialization.dataWithJSONObject( jsonValue, options: NSJSONWritingOptions.PrettyPrinted )
+		return try? NSJSONSerialization.dataWithJSONObject( jsonValue, options: .PrettyPrinted )
 	}
 
 	init?( itemAsDictionary: [ String:AnyObject ] ) {
@@ -42,7 +45,8 @@ struct ReleaseItem {
 		let mediaType = itemAsDictionary[ mediaTypeKey ] as? String,
 		let releaseDate = itemAsDictionary[ releaseDateKey ] as? String,
 		let releaseDateConfirmed = itemAsDictionary[ releaseDateConfirmedKey ] as? Bool,
-		let releaseDateSources = itemAsDictionary[ releaseDateSourcesKey ] as? [ String ]
+		let releaseDateSources = itemAsDictionary[ releaseDateSourcesKey ] as? [ String ],
+		let _id = itemAsDictionary[ _idKey ] as? String
 		else {
 			return nil
 		}
@@ -54,13 +58,14 @@ struct ReleaseItem {
 			self.releaseDateConfirmed = releaseDateConfirmed
 			self.releaseDateSources = releaseDateSources
 			self.releaseDateString = ReleaseItemController.sharedController.formatDateToString( date )
+			self._id = _id
 		} else {
 			return nil
 		}
 
 	}
 
-	init( name: String, mediaType: MediaTypes, releaseDate: NSDate, releaseDateConfirmed: Bool, releaseDateSources: [ String ] ) {
+	init( name: String, mediaType: MediaTypes, releaseDate: NSDate, releaseDateConfirmed: Bool, releaseDateSources: [ String ], _id: String = "" ) {
 
 		self.name = name
 		self.mediaType = mediaType.rawValue
@@ -68,6 +73,7 @@ struct ReleaseItem {
 		self.releaseDateConfirmed = releaseDateConfirmed
 		self.releaseDateSources = releaseDateSources
 		self.releaseDateString = ReleaseItemController.sharedController.formatDateToString( releaseDate )
+		self._id = _id
 	}
 
 }

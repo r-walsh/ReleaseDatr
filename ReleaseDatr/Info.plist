@@ -36,6 +36,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>Auth0ClientId</key>
+    <string>jNjsX1qOYCBMzx0wnDixTR0fU8Qt0s9t</string>
+    <key>Auth0Domain</key>
+    <string>r-walsh.auth0.com</string>
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSExceptionDomains</key>
