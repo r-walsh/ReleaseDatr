@@ -38,7 +38,7 @@ class AppHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UserController.sharedController.presentLoginView( self )
+        UserController.sharedController.handleAuth( self )
 
         loadingReleaseItemsIndicator.hidden = true
         

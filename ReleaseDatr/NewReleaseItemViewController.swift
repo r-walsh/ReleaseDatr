@@ -32,6 +32,24 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 		super.didReceiveMemoryWarning()
 	}
 
+	func validateTextField( textField: UITextField ) -> Bool {
+		if let text = textField.text {
+			if text == "" {
+				textField.layer.borderColor = UIColor.redColor().CGColor
+				textField.layer.borderWidth = 1
+
+				return false
+			} else {
+				textField.layer.borderColor = UIColor.blackColor().CGColor
+				textField.layer.borderWidth = 0
+			}
+		} else {
+			return false
+		}
+
+		return true
+	}
+
 	// MARK: - PickerView DataSource
 
 	func numberOfComponentsInPickerView( pickerView: UIPickerView ) -> Int {
@@ -60,15 +78,33 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 
 		if userCtrl.user == nil {
 			let alertController = UIAlertController( title: "Login", message: "You must be logged add a release item", preferredStyle: .Alert )
+
 			let loginAction = UIAlertAction( title: "Login", style: .Default ) {
 				UIAlertAction -> Void in
-				userCtrl.presentLoginView( self )
+				userCtrl.handleAuth( self )
 			}
 
 			alertController.addAction( loginAction )
 			alertController.addAction( UIAlertAction( title: "Cancel", style: .Destructive, handler: nil ) )
 
 			self.presentViewController( alertController, animated: true, completion: nil )
+			return
+		}
+
+		let nameTextFieldValid = validateTextField( releaseItemNameTextField )
+		let sourceTextFieldValid = validateTextField( sourceUrlTextField )
+
+		if !nameTextFieldValid || !sourceTextFieldValid {
+			let anim = CAKeyframeAnimation( keyPath: "transform" )
+			anim.values = [
+					NSValue( CATransform3D: CATransform3DMakeTranslation( -5, 0, 0 ) ),
+					NSValue( CATransform3D: CATransform3DMakeTranslation( 5, 0, 0 ) )
+			]
+			anim.autoreverses = true
+			anim.repeatCount = 2
+			anim.duration = 7 / 100
+
+			self.view.layer.addAnimation( anim, forKey: nil )
 			return
 		}
 

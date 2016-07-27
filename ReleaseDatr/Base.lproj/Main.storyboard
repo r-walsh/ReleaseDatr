@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -114,6 +113,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="967-HW-CsH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="50o-jp-9rJ">
+                            <connections>
+                                <segue destination="JmS-0q-Cf2" kind="show" identifier="showSavedReleaseItems" id="zbr-WK-Ha1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cct-HE-KPl">
                             <connections>
                                 <segue destination="mNa-yW-7Mp" kind="show" identifier="showNewReleaseItemForm" id="BMf-1x-ONT"/>
@@ -344,8 +348,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-pc-ghW">
-                                <rect key="frame" x="20" y="120" width="280" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 1, 1999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-pc-ghW">
+                                <rect key="frame" x="230" y="120" width="141" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="4Ou-3d-bR1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -357,29 +364,27 @@
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleCheck" translatesAutoresizingMaskIntoConstraints="NO" id="D8U-PD-wBz">
-                                <rect key="frame" x="308" y="124" width="22" height="22"/>
+                                <rect key="frame" x="379" y="123" width="22" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Jju-1s-4Tq"/>
-                                    <constraint firstAttribute="width" constant="22" id="ywS-QC-WRt"/>
+                                    <constraint firstAttribute="width" constant="22" id="HYT-HS-Fcb"/>
+                                    <constraint firstAttribute="height" constant="22" id="VO4-W1-XoH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hcl-Pb-Mtk" secondAttribute="bottom" constant="20" symbolic="YES" id="3th-l4-0vf"/>
-                            <constraint firstItem="3g4-pc-ghW" firstAttribute="leading" secondItem="p6Q-vL-AxT" secondAttribute="leadingMargin" id="9bc-j0-yOt"/>
-                            <constraint firstAttribute="centerXWithinMargins" secondItem="3g4-pc-ghW" secondAttribute="trailing" id="AM9-Xa-DNA"/>
+                            <constraint firstItem="3g4-pc-ghW" firstAttribute="centerX" secondItem="p6Q-vL-AxT" secondAttribute="centerX" id="ETg-4h-0AQ"/>
+                            <constraint firstItem="D8U-PD-wBz" firstAttribute="leading" secondItem="3g4-pc-ghW" secondAttribute="trailing" constant="8" symbolic="YES" id="Eaq-Ie-yR5"/>
                             <constraint firstItem="hcl-Pb-Mtk" firstAttribute="trailing" secondItem="p6Q-vL-AxT" secondAttribute="trailingMargin" id="FGE-Mc-mdJ"/>
-                            <constraint firstItem="hcl-Pb-Mtk" firstAttribute="top" secondItem="3g4-pc-ghW" secondAttribute="bottom" constant="8" id="N7c-YO-PcM"/>
+                            <constraint firstItem="hcl-Pb-Mtk" firstAttribute="top" secondItem="3g4-pc-ghW" secondAttribute="bottom" constant="8" symbolic="YES" id="HDf-1m-r2c"/>
                             <constraint firstItem="hcl-Pb-Mtk" firstAttribute="leading" secondItem="p6Q-vL-AxT" secondAttribute="leadingMargin" id="OaM-Hw-5S0"/>
+                            <constraint firstItem="D8U-PD-wBz" firstAttribute="centerY" secondItem="3g4-pc-ghW" secondAttribute="centerY" id="PWa-0A-gwg"/>
                             <constraint firstItem="QeH-2k-2Ai" firstAttribute="trailing" secondItem="p6Q-vL-AxT" secondAttribute="trailingMargin" id="Q7N-JD-Z2Z"/>
                             <constraint firstItem="FoI-6c-eBf" firstAttribute="top" secondItem="hcl-Pb-Mtk" secondAttribute="bottom" constant="20" id="Rrx-AV-mTe"/>
-                            <constraint firstItem="hcl-Pb-Mtk" firstAttribute="top" secondItem="3g4-pc-ghW" secondAttribute="bottom" constant="8" id="S82-N9-UPy"/>
-                            <constraint firstItem="3g4-pc-ghW" firstAttribute="top" secondItem="QeH-2k-2Ai" secondAttribute="bottom" constant="5" id="aeU-L5-nKV"/>
                             <constraint firstItem="QeH-2k-2Ai" firstAttribute="leading" secondItem="p6Q-vL-AxT" secondAttribute="leadingMargin" id="f2i-NM-m6U"/>
-                            <constraint firstItem="D8U-PD-wBz" firstAttribute="leading" secondItem="3g4-pc-ghW" secondAttribute="trailing" constant="8" symbolic="YES" id="iPo-VP-gzn"/>
                             <constraint firstItem="QeH-2k-2Ai" firstAttribute="top" secondItem="f8V-yS-M7o" secondAttribute="bottom" constant="8" symbolic="YES" id="lnh-T9-BIx"/>
-                            <constraint firstItem="D8U-PD-wBz" firstAttribute="centerY" secondItem="3g4-pc-ghW" secondAttribute="centerY" id="nzR-fu-Lsi"/>
+                            <constraint firstItem="3g4-pc-ghW" firstAttribute="top" secondItem="QeH-2k-2Ai" secondAttribute="bottom" constant="5" id="zOS-0j-5cu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -456,4 +461,7 @@
     <resources>
         <image name="circleCheck" width="48" height="48"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zbr-WK-Ha1"/>
+    </inferredMetricsTieBreakers>
 </document>
