@@ -39,15 +39,47 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 				textField.layer.borderWidth = 1
 
 				return false
-			} else {
-				textField.layer.borderColor = UIColor.blackColor().CGColor
-				textField.layer.borderWidth = 0
 			}
+
+			textField.layer.borderColor = UIColor.blackColor().CGColor
+			textField.layer.borderWidth = 0
+
 		} else {
 			return false
 		}
 
 		return true
+	}
+
+	func validateUrl( urlTextField: UITextField ) -> Bool {
+		if var urlString = urlTextField.text {
+			if !urlString.hasPrefix( "http://" ) {
+				urlString = "http://\( urlString )"
+			}
+
+			if let url = NSURL( string: urlString ) {
+				if UIApplication.sharedApplication().canOpenURL( url ) {
+					return true
+				}
+			}
+
+		}
+		urlTextField.layer.borderColor = UIColor.redColor().CGColor
+		urlTextField.layer.borderWidth = 1
+		return false
+	}
+
+	func runErrorAnimation() {
+		let anim = CAKeyframeAnimation( keyPath: "transform" )
+		anim.values = [
+				NSValue( CATransform3D: CATransform3DMakeTranslation( -5, 0, 0 ) ),
+				NSValue( CATransform3D: CATransform3DMakeTranslation( 5, 0, 0 ) )
+		]
+		anim.autoreverses = true
+		anim.repeatCount = 2
+		anim.duration = 7 / 100
+
+		self.view.layer.addAnimation( anim, forKey: nil )
 	}
 
 	// MARK: - PickerView DataSource
@@ -92,19 +124,10 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 		}
 
 		let nameTextFieldValid = validateTextField( releaseItemNameTextField )
-		let sourceTextFieldValid = validateTextField( sourceUrlTextField )
+		let sourceTextFieldValid = validateTextField( sourceUrlTextField ) && validateUrl( sourceUrlTextField )
 
 		if !nameTextFieldValid || !sourceTextFieldValid {
-			let anim = CAKeyframeAnimation( keyPath: "transform" )
-			anim.values = [
-					NSValue( CATransform3D: CATransform3DMakeTranslation( -5, 0, 0 ) ),
-					NSValue( CATransform3D: CATransform3DMakeTranslation( 5, 0, 0 ) )
-			]
-			anim.autoreverses = true
-			anim.repeatCount = 2
-			anim.duration = 7 / 100
-
-			self.view.layer.addAnimation( anim, forKey: nil )
+			runErrorAnimation()
 			return
 		}
 

@@ -26,6 +26,7 @@
 		A01AF27E1D4295C800C92439 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AF27D1D4295C800C92439 /* NetworkController.swift */; };
 		A01AF2821D42A11300C92439 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AF2811D42A11300C92439 /* ButtonBorder.swift */; };
 		A0CE4A1E1D467D09003DA456 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CE4A1D1D467D08003DA456 /* AppHomeViewController.swift */; };
+		A0E47C041D4935D900C01F06 /* SourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E47C031D4935D900C01F06 /* SourceTableViewCell.swift */; };
 		B11DEE9717799C83586EEEB8 /* Pods_ReleaseDatrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5B521668A3A3B34C44D3BA /* Pods_ReleaseDatrTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		A01AF27D1D4295C800C92439 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		A01AF2811D42A11300C92439 /* ButtonBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
 		A0CE4A1D1D467D08003DA456 /* AppHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
+		A0E47C031D4935D900C01F06 /* SourceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				A01AF2631D42951F00C92439 /* Info.plist */,
 				A01AF2601D42951F00C92439 /* LaunchScreen.storyboard */,
 				A01AF2581D42951F00C92439 /* Main.storyboard */,
+				A0E47C031D4935D900C01F06 /* SourceTableViewCell.swift */,
 				A01AF27D1D4295C800C92439 /* NetworkController.swift */,
 				A01AF27B1D4295B000C92439 /* NewReleaseItemViewController.swift */,
 				A01AF25B1D42951F00C92439 /* ReleaseDatr.xcdatamodeld */,
@@ -373,6 +376,7 @@
 				A00817E51D46ABC5009E41F8 /* UserController.swift in Sources */,
 				A00817E71D46ABE9009E41F8 /* User.swift in Sources */,
 				A0CE4A1E1D467D09003DA456 /* AppHomeViewController.swift in Sources */,
+				A0E47C041D4935D900C01F06 /* SourceTableViewCell.swift in Sources */,
 				A00817E11D468B73009E41F8 /* ReleaseItemDetailViewController.swift in Sources */,
 				A01AF27E1D4295C800C92439 /* NetworkController.swift in Sources */,
 				A00817DF1D4686E6009E41F8 /* ReleaseItemTableViewCell.swift in Sources */,

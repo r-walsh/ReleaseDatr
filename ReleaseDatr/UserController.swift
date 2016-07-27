@@ -80,7 +80,6 @@ class UserController {
 
 	func presentLoginView( fromController: UIViewController, keychain: A0SimpleKeychain ) {
 
-		// present login view if token does not exist
 		let controller = A0Lock.sharedLock().newLockViewController()
 		controller.closable = true
 		controller.onAuthenticationBlock = {
