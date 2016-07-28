@@ -35,6 +35,14 @@ class ReleaseItemDetailViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 	}
 
+	func textChanged( sender: AnyObject ) {
+
+	}
+
+	@IBAction func addSourceButtonPressed( sender: AnyObject ) {
+
+	}
+
 	override func prepareForSegue( segue: UIStoryboardSegue, sender: AnyObject? ) {
 		if segue.identifier == "embeddedSourcesTableView" {
 			if let releaseItem = self.releaseItem, destination = segue.destinationViewController as? SourcesTableViewController {

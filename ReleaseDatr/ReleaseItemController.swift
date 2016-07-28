@@ -35,8 +35,6 @@ class ReleaseItemController {
 			musicKey: []
 	]
 
-	var releaseItems: [ ReleaseItem ] = []
-
 	func createReleaseItem( name: String, mediaType: MediaTypes, releaseDate: NSDate, releaseDateConfirmed: Bool = false, releaseDateSources: [ String ] ) -> ReleaseItem {
 		return ReleaseItem( name: name, mediaType: mediaType, releaseDate: releaseDate, releaseDateConfirmed: releaseDateConfirmed, releaseDateSources: releaseDateSources )
 	}
@@ -68,12 +66,11 @@ class ReleaseItemController {
 			let releaseItemDictionaries = try NSJSONSerialization.JSONObjectWithData( json, options: [] ) as? [ [ String:AnyObject ] ]
 
 			if let releaseItemDictionaries = releaseItemDictionaries {
-				self.releaseItems = []
 				for item in releaseItemDictionaries {
 					let releaseItem = ReleaseItem( itemAsDictionary: item )
 
 					if let unwrappedReleaseItem = releaseItem {
-						self.releaseItemsByType[ unwrappedReleaseItem.mediaType ]?.append( unwrappedReleaseItem )
+						releaseItemsByType[ unwrappedReleaseItem.mediaType ]?.append( unwrappedReleaseItem )
 					}
 				}
 			}

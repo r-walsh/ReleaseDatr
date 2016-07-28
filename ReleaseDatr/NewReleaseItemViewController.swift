@@ -82,6 +82,26 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 		self.view.layer.addAnimation( anim, forKey: nil )
 	}
 
+	func confirmLoggedIn() -> Bool {
+		let userCtrl = UserController.sharedController
+
+		if userCtrl.user == nil {
+			let alertController = UIAlertController( title: "Login", message: "You must be logged add a release item", preferredStyle: .Alert )
+
+			let loginAction = UIAlertAction( title: "Login", style: .Default ) {
+				UIAlertAction -> Void in
+				userCtrl.handleAuth( self )
+			}
+
+			alertController.addAction( loginAction )
+			alertController.addAction( UIAlertAction( title: "Cancel", style: .Destructive, handler: nil ) )
+
+			self.presentViewController( alertController, animated: true, completion: nil )
+			return false
+		}
+		return true
+	}
+
 	// MARK: - PickerView DataSource
 
 	func numberOfComponentsInPickerView( pickerView: UIPickerView ) -> Int {
@@ -106,27 +126,11 @@ class NewReleaseItemViewController: UIViewController, UIPickerViewDelegate, UIPi
 	// MARK: - Actions
 
 	@IBAction func saveReleaseItemButtonPressed( sender: UIButton ) {
-		let userCtrl = UserController.sharedController
-
-		if userCtrl.user == nil {
-			let alertController = UIAlertController( title: "Login", message: "You must be logged add a release item", preferredStyle: .Alert )
-
-			let loginAction = UIAlertAction( title: "Login", style: .Default ) {
-				UIAlertAction -> Void in
-				userCtrl.handleAuth( self )
-			}
-
-			alertController.addAction( loginAction )
-			alertController.addAction( UIAlertAction( title: "Cancel", style: .Destructive, handler: nil ) )
-
-			self.presentViewController( alertController, animated: true, completion: nil )
-			return
-		}
 
 		let nameTextFieldValid = validateTextField( releaseItemNameTextField )
 		let sourceTextFieldValid = validateTextField( sourceUrlTextField ) && validateUrl( sourceUrlTextField )
 
-		if !nameTextFieldValid || !sourceTextFieldValid {
+		if !confirmLoggedIn() || !nameTextFieldValid || !sourceTextFieldValid {
 			runErrorAnimation()
 			return
 		}

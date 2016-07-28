@@ -461,7 +461,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MediaType" id="Z7T-oP-R6c">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HXV-Jv-zDY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HXV-Jv-zDY">
+                            <connections>
+                                <action selector="addSourceButtonPressed:" destination="4Cf-IJ-uqc" id="o6A-a4-BiG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="navItem" destination="Z7T-oP-R6c" id="Oit-Di-j0b"/>
